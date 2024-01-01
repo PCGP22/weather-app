@@ -15,7 +15,7 @@ function DayForeCast({data}) {
         <h4>{translateDay(day)}</h4>
         <img src={translateIcons(data.icon)} alt={`${data.icon} icon`} width={30}/>
         <div>
-            <p>{tempmin}°/</p>
+            <p>{tempmin}° -</p>
             <span>{tempmax}°</span>
         </div>
     </div>

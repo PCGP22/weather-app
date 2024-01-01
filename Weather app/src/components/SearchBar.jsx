@@ -8,7 +8,7 @@ function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [error, setError] = useState("");
 
-  const [weatherData, setWeatherData] = useContext(dataContext);
+  const [, setWeatherData] = useContext(dataContext);
 
   function handleChange(e){
     setSearchTerm(e.target.value)

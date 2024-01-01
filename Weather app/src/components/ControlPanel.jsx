@@ -15,11 +15,10 @@ function ControlPanel() {
   return (
     <div className='controlPanel frontBlue'>
       <h3>Control Panel</h3>
-        <p>Change Measure</p>
-        <div>
-          <button type='button' onClick={handleClick}>{conversion}°</button>
-          <label>Degrees</label>
-        </div>
+          <div>
+              <span>Change measure</span>
+              <button type='button' onClick={handleClick}> °{conversion}</button>
+          </div>
     </div>
   )
 }

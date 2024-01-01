@@ -11,7 +11,7 @@ function HourForeCast({data}) {
   
   return (
     <div className='hourWrapper'>
-        <p>{hour}</p>
+        <p><b>{hour}</b></p>
         <img src={translateIcons(data.icon)} alt={`${data.icon} icon`} width={30}/>
         <p>{temp}°</p>
     </div>

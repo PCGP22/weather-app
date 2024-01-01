@@ -17,24 +17,20 @@ function WeatherMain() {
         <main>
             <div>
                 <h1>{translateName(weatherData.address)}</h1>
-                <p>{temp}°</p>
+                <p className="temperature">{temp} °{conversion}</p>
             </div>
             <div>
-                <img src={translateIcons(weatherData.currentConditions.icon)} alt={`${weatherData.currentConditions.icon} icon`}/>
+                <img className="icon" src={translateIcons(weatherData.currentConditions.icon)} alt={`${weatherData.currentConditions.icon} icon`}/>
                 <h2>{weatherData.currentConditions.conditions}</h2>
             </div>
         </main>
-        <div className='weatherMain__todayWrapper'>
+        <h3>Today</h3>
+        <div className='forecast_wrapper'>
             <HourForeCast data={weatherData.days[1].hours[hour]}/>
-            <li/>
             <HourForeCast data={weatherData.days[1].hours[hour+1]}/>
-            <li/>
             <HourForeCast data={weatherData.days[1].hours[hour+2]}/>
-            <li/>
             <HourForeCast data={weatherData.days[1].hours[hour+3]}/>
-            <li/>
             <HourForeCast data={weatherData.days[1].hours[hour+4]}/>
-            <li/>
             <HourForeCast data={weatherData.days[1].hours[hour+5]}/>
         </div>
     </div>

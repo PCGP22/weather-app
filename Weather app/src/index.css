@@ -1,6 +1,7 @@
 :root{
-    --background_blue: linear-gradient(0deg, #191e39, #9198e5);
-
+    --background_blue: linear-gradient(0deg, #191e39, #383d74);
+    --background_hover: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    --button_color: rgb(77, 77, 145);
     --front_blue: #3d3f49;
     background: var(--background_blue);
     color:white;
@@ -9,205 +10,185 @@
 }
 
 body{
-    padding-inline: 2%;
-    padding-bottom: 1%;
     margin: 0;
-    margin-bottom: 20px;
-}
-
-
-.frontBlue{
-    background-color: var(--front_blue);
-    border-radius: 20px;
-    box-sizing: border-box;
-    padding-inline: 2%;
-    padding-block: 1%;
-    margin-block: 2%;
-    backdrop-filter: blur(5px);
-    opacity: 90%;
-    border: 0.1px solid rgba(255, 255, 255, 0.3);
+    padding-inline: 16px;
 }
 
 .wrapper{
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
-    gap: 2%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
 }
 
-.extend{
-    display: block;
+.frontBlue{
+    background-color: var(--front_blue);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-block: 16px;
+    border-radius: 20px;
 }
 
 .searchBar{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 8px;
 }
-
-.searchBar button{
-    width: 30%;
-    padding-block: 8px;
-    border: outset;
-    background-color: #fefefe;
-    border-radius: 0 12px 12px 0;
-    font: inherit;
-}
-
 
 input{
-    border-radius: 12px 0 0 12px;
-    padding: 8px;
     width: 60%;
-    font:inherit;
+    padding: 4px 8px;
+    border-radius: 20px 0 0 20px;
+    font-size: 1.2em;
 }
 
-.searchBar p{
-    margin-block: 0;
-}
+button{
+    padding: 4px 8px;
+    font-size: 1.2em;
+    background-color: var(--button_color);
+    color:white;
 
-input:hover,
-input:focus{
-    border: black solid;
-}
-
-.weatherMain__wrapper{
-    width: 100%;
-    display: grid;
-
-}
-
-.weatherMain__todayWrapper, .weekDaysContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-main img{
-    max-width: 90%; 
-}
-
-main > div{
-    max-width: 40%;
-}
-
-main div:last-child{
-    max-width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-main > div p{
-    font-size: 2em;
-}
-
-h2{
-    text-align: center;
-}
-
-.hourWrapper p:first-child{
-   opacity: 0.8;
-}
-
-.hourWrapper p:last-child{
-    font-size: larger;
- }
-
-h3{
-    margin-block: 2px;
-}
-.controlPanel{
-    display: flex;
-    justify-content: space-between;
-}
-
-.controlPanel button{
-    padding: 8px;
-    width: 80%;
-    font:inherit;
-    font-weight: bolder;
-    border-radius: 8px;
-    border: outset;
-}
-
-.controlPanel > p{
-    font-size: 1.5em;
-}
-
-.controlPanel div{
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 button:hover{
-    filter: brightness(60%);
-    border: inset;
+    filter: brightness(75%);
+    cursor: pointer;
 }
 
 button:active{
-    background: black;
-    color:white;
+    background-color: rgb(24, 24, 24);
 }
 
-.weekDaysContainer{
-    padding-block: 20px;
-    padding-bottom: 35px;
+.searchBar button{
+    border-radius: 0 20px 20px 0;
 }
-.weekDaysContainer div{
+
+.frontBlue:not(.searchBar){
+    padding: 8px 16px;
+}
+
+h1,h3{
+    margin-top: 0;
+}
+
+.temperature{
+    font-size: 1.8em;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+}
+
+main > div:last-child{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+
+.icon{
+    width: 80%;
+    max-width: 200px;
+}
+
+.forecast_wrapper{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    column-gap: 16px;
 }
 
-li{
-    list-style-type: none;
-    height: 60%;
-    width: 2px;
-    background: white;
+.forecast_wrapper > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    border: 1px solid transparent;
+    padding-inline: 12px;
+}
+
+.forecast_wrapper > div:hover{
+    border-inline: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--background_hover);
+}
+
+.controlPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.controlPanel div{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2%;
+}
+
+.controlPanel span{
     opacity: 0.8;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.weekDaysContainer li{
-    height: 100px;
+.controlPanel button{
+    width: 30%;
+    border-radius: 12px
+}
+
+
+b, h4, h2{
+    opacity: 0.6;
 }
 
 .additionalData{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-.additionalData div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.additionalData img{
-    margin-bottom: 4px;
+.additionalData p, .additionalData h4{
+    margin: 4px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .data{
-    font-weight: bold;
-    font-size: 1.8em;
-    margin-bottom: 0;
+    font-size: 1.5em;
 }
 
 .unit{
     opacity: 0.8;
-    font-size: 1.5em;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 8px;
+    border-radius: 20px;
+}
+
+
+@media (width < 750px) {
+    
+    h1{
+        font-size: 1.5em;
+    }
+
+    .temperature{
+        font-size: 1.5em;
+    }
+}
+
+@media (width < 565px){
+    .wrapper{
+        gap: 0;
+    }
+    .lastContainer{
+        margin-top: -16px;
+    }
+}
+
+@media (width < 300px) {
+    h1, .temperature{
+        font-size: 1.2em;
+    }
 }

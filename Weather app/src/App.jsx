@@ -23,16 +23,16 @@ function App() {
             <WeatherMain/>
             <Description/>
           </div>
-          <div>
+          <div className="lastContainer">
             <ControlPanel/>
             <WeekForeCast/>
             <AdditionalData/>
+            <footer>
+              <span>Made by Paulo César Gutiérrez Padilla </span> 
+              <span>PCGP22@gmail.com</span>
+            </footer>
           </div>
         </div>
-        <footer>
-          <span>Made by Paulo César Gutiérrez Padilla </span> 
-          <span>PCGP22@gmail.com</span>
-        </footer>
       </conversionContext.Provider>
     </dataContext.Provider>
   )
